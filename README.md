@@ -47,13 +47,26 @@ The macOS app is not code-signed or notarized. The first time a recipient opens 
 - **Left-click and drag** the pet to move it. It uses the matching left/right run animation while dragging.
 - The pet uses its Waiting animation while the right-click menu is open.
 
+## Adjust animation speed
+
+Each animation has its own frame interval. In [`renderer/renderer.js`](renderer/renderer.js), edit the `frameIntervalMs` values near the top:
+
+```js
+idle: 650,      // slower value = slower animation
+jump: 200,
+runLeft: 160,
+runRight: 160
+```
+
+The values are milliseconds per frame. Increase a value to slow that animation down; decrease it to speed it up. Restart the app after saving.
+
 ## Project map
 
 ```text
 assets/              Animation PNGs, grouped by animation
 main.cjs             Window, dragging, and native context-menu logic
 preload.cjs          Safe bridge between the window and renderer
-renderer/            Pet display, animation state, and CSS
+renderer/            Pet display, animation state, CSS, and timing map
 package.json         Commands and dependency versions
 ```
 
