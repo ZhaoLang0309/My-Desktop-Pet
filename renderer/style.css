@@ -1,0 +1,2 @@
+html, body { width: 192px; height: 208px; margin: 0; overflow: hidden; background: transparent; }
+#pet { display: block; width: 192px; height: 208px; user-select: none; -webkit-user-drag: none; }
